@@ -7,6 +7,8 @@ import requests
 import re
 from tqdm import tqdm
 
+README_PATH = 'src/README.md'
+
 def parse_args():    
     import argparse
 
@@ -114,7 +116,7 @@ def replace_invalid_chars(filename, spliter='_'):
 
 def parse_text(args):
     # 读取文件内容
-    with open('data/README.md', 'r', encoding='utf-8') as file:
+    with open(README_PATH, 'r', encoding='utf-8') as file:
         content = file.read()
 
     # 正则表达式匹配<details>块
@@ -188,7 +190,7 @@ def download(args):
         name, url, file_path = get_path_url(row, rootdir)
         
         # 确保目录存在，如果不存在则创建
-        os.makedirs(save_dir, exist_ok=True)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         save_path = download_pdf(file_path, url)
         if save_path:
             suceed += 1

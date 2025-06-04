@@ -2,21 +2,26 @@
 
 ![TSFpaper](https://img.shields.io/github/stars/ddz16/TSFpaper)
 
-### Update paper list
+### Init 
+
+Check out paper list from [ddz16/TSFpaper](https://github.com/ddz16/TSFpaper)
 
 ~~~
-git subtree pull --prefix=data/  https://github.com/ddz16/TSFpaper.git main --squash
+git clone  https://github.com/ddz16/TSFpaper src
 ~~~
 
-### Download papers
+### Update all
+
+windows: run `update.bat`
+linux: run `update.sh`
+
+### Run script with args
 
 | param    | default          | comment                      |
 | -------- | ---------------- | ---------------------------- |
 | input    | "paperlist.xlsx" | extracted paper list table   |
 | output   | "pdf"            | directory to download papers |
 | category | None             |                              |
-
-
 
 ~~~python
 python downloader.py
