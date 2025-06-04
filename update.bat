@@ -58,7 +58,9 @@ if !errorlevel! neq 0 (
     exit /b 4
 )
 
+del /F "paperlist.xlsx"
+
 echo.
-echo [INFO] 所有操作完成！
+echo [INFO] 论文列表文件已生成: output.xlsx
 pause
 exit /b 0

@@ -63,5 +63,7 @@ if [ $? -ne 0 ]; then
     exit 4
 fi
 
-echo "所有操作完成！"
+rm -f "paperlist.xlsx"
+
+echo "论文列表文件已生成: output.xlsx"
 exit 0
